@@ -48,7 +48,7 @@
                             <td class="d-flex justify-content-center align-items-center">
                                 <g:link name="editar" class="btn btn-primary me-2" action="edit"
                                         params="[carro_id: carro.id]">Editar</g:link>
-                                <g:link name="deletar" onclick="confirmacaoParaDeletar()" class="btn btn-danger" action="delete"
+                                <g:link name="deletar" class="btn btn-danger" action="delete"
                                         params="[carro_id: carro.id]">Deletar</g:link>
                             </td>
                         </tr>
