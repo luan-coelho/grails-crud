@@ -7,7 +7,6 @@ class Carro {
     Marca marca
     TipoCarro tipo
 
-    static hasOne = [Marca, TipoCarro]
 
     static constraints = {
         marca nullable: true

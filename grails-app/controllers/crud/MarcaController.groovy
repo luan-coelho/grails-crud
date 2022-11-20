@@ -9,12 +9,15 @@ class MarcaController {
     def create() {}
 
     def edit() {
-        [marca: Marca.findById(params.get("marca_id") as Long)]
+        Marca marca = Marca.findById(params.long("marca_id"))
+        [marca: marca]
     }
 
     def save() {
         Marca marca = new Marca(params)
-        marca.save()
+        if(!marca.save(flush: true)){
+
+        }
 
         flash.message = "Marca adicionada com sucesso!"
         flash.args = ["Sucesso!"]
@@ -33,6 +36,6 @@ class MarcaController {
     def delete(){
         Marca marca = Marca.findById(params.get("marca_id") as Long)
         marca.delete()
-        redirect(controller: 'marca', action: 'index')
+        render(view: "index")
     }
 }
